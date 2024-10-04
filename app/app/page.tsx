@@ -25,7 +25,13 @@ const page = async () => {
 
                 <Image src={item.url} height={200} width={200} alt={item.name} className='rounded-lg' />
                 
-                <Link href={`/creatememe?id=${item.id}`}>
+                <Link  href={{
+    pathname: '/creatememe',
+    query: { 
+    
+      url:item.url 
+    }
+  }}>
                   <button className='mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600'>
                     Create Meme
                   </button>
