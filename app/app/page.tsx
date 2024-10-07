@@ -1,66 +1,50 @@
-"use client"
+
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-const MemeGeneratorPage = () => {
-  const [memes, setMemes] = useState([]);
-  const [loading, setLoading] = useState(true);
+const page = async () => {
+  const response = await fetch('https://api.imgflip.com/get_memes')
+    .then((response) => response.json())
+    .then((response) => response.data)
+    .catch((error) => console.log(error));
 
-  useEffect(() => {
-    const fetchMemes = async () => {
-      try {
-        const response = await fetch('https://api.imgflip.com/get_memes');
-        const { data } = await response.json();
-        setMemes(data.memes);
-        setLoading(false);
-      } catch (error) {
-        console.log('Error fetching memes:', error);
-      }
-    };
-    fetchMemes();
-  }, []);
+  console.log(response);
 
   return (
-    <div className="bg-gray-900 min-h-screen p-8">
-      <header className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-white">VIP Meme Generator</h1>
-        <p className="text-gray-400 mt-2">Create memes with premium ease and style</p>
-      </header>
-
-      <div className="flex flex-wrap justify-center gap-6">
-        {loading ? (
-          <h2 className="text-white text-2xl">Loading memes...</h2>
-        ) : memes.length > 0 ? (
-          memes.map((item: { name: string; id: string; url: string; box_count: string }) => (
-            <div
-              key={item.id}
-              className="bg-gray-800 text-white rounded-lg shadow-lg p-4 transform transition-all hover:scale-105"
-            >
-              <Image src={item.url} height={200} width={200} alt={item.name} className="rounded-lg" />
-              <h2 className="text-lg mt-4">{item.name}</h2>
-              <Link
-                href={{
-                  pathname: '/creatememe',
-                  query: {
-                    id: item.id,
-                    url: item.url,
-                    box: item.box_count,
-                  },
-                }}
+    <>
+      <div className='flex flex-wrap justify-center gap-5 p-10 bg-gray-100 min-h-screen '>
+        {response ? (
+          response.memes.map((item: { name: string; id: string; url: string ,box_count:string}) => {
+            return (
+              <div
+                key={item.id}
+                className='border border-gray-300 text-center rounded-lg p-5  bg-white shadow-lg transform transition hover:scale-105'
               >
-                <button className="mt-4 w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition">
-                  Create Meme
-                </button>
-              </Link>
-            </div>
-          ))
+
+                <Image src={item.url} height={200} width={200} alt={item.name} className='rounded-lg h-52' />
+                
+                <Link  href={{
+    pathname: '/creatememe',
+    query: { 
+    id:item.id,
+      url:item.url ,
+      box:item.box_count
+    }
+  }}>
+                  <button className='mt-4 bg-blue-500  text-white px-4 py-2 rounded-lg hover:bg-blue-600'>
+                    Create Meme
+                  </button>
+                </Link>
+              </div>
+            );
+          })
         ) : (
-          <h2 className="text-white text-2xl">No memes found</h2>
+          <h1 className='text-xl font-bold text-red-500'>Memes not found</h1>
         )}
       </div>
-    </div>
+    </>
   );
 };
 
-export default MemeGeneratorPage;
+export default page;
