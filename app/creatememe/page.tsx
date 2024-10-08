@@ -3,8 +3,8 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 const CreateMeme = ({ searchParams }: { searchParams: { id: string, url: string, box: string } }) => {
-  let [meme, setMeme] = useState<string | null>(null);
-  let [loading, setLoading] = useState<boolean>(false); // Add loading state
+  const [meme, setMeme] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false); // Add loading state
   const inputRefs = useRef<HTMLInputElement[]>([]);
 
   // Converting box to a number and creating refs for each box dynamically

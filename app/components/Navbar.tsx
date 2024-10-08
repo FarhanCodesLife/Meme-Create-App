@@ -4,10 +4,8 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
-  // State to manage theme (light/dark)
   const [isDark, setIsDark] = useState(false);
 
-  // On mount, check if theme is stored in localStorage and apply it
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -16,7 +14,6 @@ const Navbar = () => {
     }
   }, []);
 
-  // Function to toggle theme and store it in localStorage
   const handleThemeChange = () => {
     const newTheme = isDark ? 'light' : 'dark';
     setIsDark(!isDark);
