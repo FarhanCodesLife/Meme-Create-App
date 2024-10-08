@@ -6,6 +6,8 @@ const Corousal = () => {
     <div className="carousel m-10 h-96 shadow-lg   border ">
       <div id="slide1" className="carousel-item relative w-full">
         <Image
+         height={100}
+         width={100}
           src="https://i.ytimg.com/vi/omV5m5ZXkLg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBm89E323fkZVDWmF-fmWvD_EklFA"
           className="w-full"
           alt="mmmm"
@@ -21,6 +23,8 @@ const Corousal = () => {
       </div>
       <div id="slide2" className="carousel-item relative w-full">
         <Image
+         height={100}
+         width={100}
           src="https://media.licdn.com/dms/image/D5612AQGf0dUH2xs8WQ/article-cover_image-shrink_720_1280/0/1678729017267?e=2147483647&v=beta&t=qvg9zN8XysQ7LIdBjZYwG0t3TedZn5h_rilFdcxVxcQ"
           className="w-full"
           alt="nxnn"
@@ -36,6 +40,9 @@ const Corousal = () => {
       </div>
       <div id="slide3" className="carousel-item relative w-full">
         <Image
+         height={100}
+         width={100}
+
           src="https://www.kapwing.com/resources/content/images/size/w1200/2020/01/image---2020-01-23T155051.930.jpg"
           className="w-full"
           alt="xb"
@@ -51,6 +58,8 @@ const Corousal = () => {
       </div>
       <div id="slide4" className="carousel-item relative w-full">
         <Image
+        height={100}
+        width={100}
           src="https://thijsporck.com/wp-content/uploads/2022/01/oegrammarmeme.banner.jpg?w=1200"
           className="w-full"
           alt="jj"
