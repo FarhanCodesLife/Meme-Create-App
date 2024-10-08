@@ -9,8 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        neutral: {
+          DEFAULT: '#3D4451', 
+          content: '#ffffff',
+        },
       },
     },
   },

@@ -6,6 +6,9 @@ const nextConfig = {
                 {
                     protocol: 'https',
                     hostname: 'i.imgflip.com',
+                }, {
+                    protocol: 'https',
+                    hostname: 'imgflip.com',
                 },
                
     
