@@ -2,7 +2,7 @@ import React from "react";
 
 const Corousal = () => {
   return (
-    <div className="carousel m-10  shadow-lg   border ">
+    <div className="carousel m-10 h-96 shadow-lg   border ">
       <div id="slide1" className="carousel-item relative w-full">
         <img
           src="https://i.ytimg.com/vi/omV5m5ZXkLg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBm89E323fkZVDWmF-fmWvD_EklFA"
