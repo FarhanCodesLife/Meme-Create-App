@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Corousal from "./components/Corousal";
 
 const page = async () => {
   const response = await fetch("https://api.imgflip.com/get_memes")
@@ -13,9 +12,7 @@ const page = async () => {
 
   return (
     <>
-      <div className="flex justify-center m-5 rounded-xl">
-        <Corousal />
-      </div>
+      
       <div className="text-start text-2xl p-3 px-10">
         <h1>Templetes</h1>
       </div>
@@ -52,7 +49,7 @@ const page = async () => {
                       },
                     }}
                   >
-                    <button className="mt-4 bg-blue-500  text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                    <button className="mt-4    px-4 py-2 rounded-lg  btn btn-outline btn-info">
                       Create Meme
                     </button>
                   </Link>

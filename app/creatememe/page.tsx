@@ -59,7 +59,7 @@ console.log(texts[2]);
           />
         ))}
 
-        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">
+        <button type="submit" className="w-full  p-2 rounded-md  btn btn-outline btn-info">
           {loading ? <span className="loading loading-spinner text-info"></span> : "Create Meme"}
         </button>
       </form>
