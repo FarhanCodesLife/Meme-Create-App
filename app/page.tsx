@@ -12,7 +12,6 @@ const page = async () => {
 
   return (
     <>
-      
       <div className="text-start text-2xl p-3 px-10">
         <h1>Templetes</h1>
       </div>
