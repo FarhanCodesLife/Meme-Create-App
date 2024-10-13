@@ -11,7 +11,7 @@ const CreateMeme = ({ searchParams }: { searchParams: { id: string, url: string,
 
   async function createMeme(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setLoading(true); // Set loading to true when the request starts
+    setLoading(true); 
     const texts = inputRefs.current.map((ref) => ref?.value || "");
 console.log(texts[2]);
 
