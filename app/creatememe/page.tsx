@@ -7,10 +7,8 @@ const CreateMeme = ({ searchParams }: { searchParams: { id: string, url: string,
   const [loading, setLoading] = useState<boolean>(false); // Add loading state
   const inputRefs = useRef<HTMLInputElement[]>([]);
 
-  // Converting box to a number and creating refs for each box dynamically
   const boxCount = parseInt(searchParams.box, 10) || 2;
 
-  // Function to handle meme creation
   async function createMeme(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setLoading(true); // Set loading to true when the request starts
